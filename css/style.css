@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Righteous&family=Roboto:wght@700&family=Rubik:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,800&family=Montserrat:ital,wght@1,600&family=Righteous&family=Roboto:wght@700&family=Rubik:ital,wght@1,700&display=swap');
+@import url(./general.css);
 *{
     margin: 0;
     padding: 0;
@@ -58,6 +59,62 @@ body{
     background-color: var(--color-text);
 }
 
+/* ANIMACION */
+
+.inicio-foto, h1 {
+    padding: 20px 0 20px;
+    animation-duration: 5s;
+    animation-name: slidein;
+}  
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+    
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.636);
+    color: var(--color-text);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+.row {
+    padding: 1em 1em;
+}
+.row.primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    align-items: stretch;
+}
+.column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    min-height: 10em;
+}
+div.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+}
+.social i {
+    color: #bccce7;
+    cursor: pointer;
+}
 /* NAV */
 
 .container-nav{
@@ -101,28 +158,6 @@ body{
     width: 55px;
 }
 
-
-
-
-
-
-.inicio-foto, h1 {
-    padding: 20px 0 20px;
-    animation-duration: 5s;
-    animation-name: slidein;
-}  
-@keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%
-    }
-    
-    to {
-        margin-left: 0%;
-        width: 100%;
-    }
-}
-
 /* TITULOS */
 
 .inicio-foto{
@@ -152,45 +187,6 @@ iframe{
     margin: 0 20px;
     width: auto;
 }
-
-/* FOOTER */
-
-footer {
-    background-color: rgba(0, 0, 0, 0.636);
-    color: var(--color-text);
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-}
-.row {
-    padding: 1em 1em;
-}
-.row.primary {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
-    align-items: stretch;
-}
-.column {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 2em;
-    min-height: 10em;
-}
-div.social {
-    display: flex;
-    justify-content: space-around;
-    font-size: 2.4em;
-    flex-direction: row;
-    margin-top: 0.5em;
-}
-.social i {
-    color: #bccce7;
-    cursor: pointer;
-}
-
 /* CONTACTO */
 
 .seccion-contacto{

@@ -1,106 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link css boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- Icono pestaña -->
-    <link rel="shortcut icon" href="../img/png-logo-house-of-stark-illustration.png">
-    <title>Inicio Stark Company</title>
-    <!-- LINK JS -->
-    <script src="../js/code.js"></script>
-    <!-- Link Css -->
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link css boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- Icono pestaña -->
+  <link rel="shortcut icon" href="../img/png-logo-house-of-stark-illustration.png">
+  <title>Inicio Stark Company</title>
+
+    <style>
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: #584040;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor {
+    width: 920px;
+    height: 280px;
+    margin: 0 auto;
+    
+    position: relative;
+
+    background: linear-gradient(#b7d6c7, transparent) #ffe2d1;/*linear-gradient(#90ebff, white);*/
+    transition: background-color 1s linear;
+    overflow: hidden;
+}
+
+.mediodia {
+    background-color: #ffdcf3;
+}
+
+.tarde {
+    background-color: #ffadad;
+}
+
+.noche {
+    background-color: #aca8c7;
+}
+
+.dino {
+    width: 84px;
+    height: 84px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(../img/juego/dino.png) repeat-x 0px 0px;
+    background-size: 336px 84px;
+    background-position-x: 0px;
+
+}
+
+.dino-corriendo {
+    animation: animarDino 0.25s steps(2) infinite;
+}
+.dino-estrellado {
+    background-position-x: -252px;
+}
+
+.suelo {
+    width: 200%;
+    height: 42px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background: url(../img/juego/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+
+}
+
+.cactus{
+    width: 46px;
+    height: 96px;
+
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+
+    background: url(../img/juego/cactus1.png) no-repeat;
+}
+.cactus2{
+    width: 98px;
+    height: 66px;
+
+    background: url(../img/juego/cactus2.png) no-repeat;
+}
+
+.nube{
+    width: 92px;
+    height: 26px;
+
+    position: absolute;
+    z-index: 0;
+
+    background: url(../img/juego/nube.png) no-repeat;
+    background-size: 92px 26px;
+}
+
+.score{
+    width: 100px;
+    height: 30px;
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+
+    color: #d48871;
+    font-family: Verdana;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.game-over{
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+
+    text-align: center;
+    color: #7e928b;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: 700;
+}
+
+@keyframes animarDino{
+    from{
+        background-position-x: -84px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+
+    </style>
+</head>
 <body>
-<header>
-      <!-- NAV -->
-        <div class="container-nav">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container">
-                    <a href="./Inicio.html"><img src="../img/png-logo-house-of-stark-illustration.png" alt="" class=" foto-nav"></a>
-                    <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./Inicio.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contacto.html">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./entretenimiento.html">Entretenimiento</a>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav> 
-        </div>
-    </header>
-    <main class="tabla-juego">
-      <section class="section1">
-        <table>
-          <tr>
-            <td><button id="0" onclick="descubrir(0)"></button></td>
-            <td><button id="1" onclick="descubrir(1)"></button></td>
-            <td><button id="2" onclick="descubrir(2)"></button></td>
-            <td><button id="3" onclick="descubrir(3)"></button></td>
-          </tr>
-          <tr>
-            <td><button id="4" onclick="descubrir(4)"></button></td>
-            <td><button id="5" onclick="descubrir(5)"></button></td>
-            <td><button id="6" onclick="descubrir(6)"></button></td>
-            <td><button id="7" onclick="descubrir(7)"></button></td>
-          </tr>
-          <tr>
-            <td><button id="8" onclick="descubrir(8)"></button></td>
-            <td><button id="9" onclick="descubrir(9)"></button></td>
-            <td><button id="10" onclick="descubrir(10)"></button></td>
-            <td><button id="11" onclick="descubrir(11)"></button></td>
-          </tr>
-          <tr>
-            <td><button id="12" onclick="descubrir(12)"></button></td>
-            <td><button id="13" onclick="descubrir(13)"></button></td>
-            <td><button id="14" onclick="descubrir(14)"></button></td>
-            <td><button id="15" onclick="descubrir(15)"></button></td>
-          </tr>
-        </table>
-      </section>
-      <section class="section2">
-        <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
-        <h2 id="t-restante" class="estadisticas">Tiempo: 30 segundos</h2>
-        <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
-      </section>
-    </main>
-        <footer>
-          <div class="row primary">
-            <div class="column about">
-            <h3 class="titulos-principales">REDES</h3>
-             <p class="data">
-                Puedes comunicarte con nosotros a traves de las siguientes plataformas
-            </p>
-            <div class="social">
-              <!-- Links a redes -->
-              <a href="http://wa.me/5493364613569?text=Necesito%20información" target="_blank"><i class="fa-brands fa-whatsapp"></i>
-              <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            </div>  
-        </footer>
-        <!-- Icons js -->
-        <script src="https://kit.fontawesome.com/b89af2b70f.js" crossorigin="anonymous"></script>
-        <!-- Link js boostrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-      </body>
-      </html>
+
+    <div class="contenedor">
+
+        <div class="suelo"></div>
+        
+        <div class="dino dino-corriendo"></div>
+
+        <div class="score">0</div>
+
+    </div>
+
+    <div class="game-over">GAME OVER</div>
+    
+
+<script>
+
+//****** GAME LOOP ********//
+
+var time = new Date();
+var deltaTime = 0;
+
+if(document.readyState === "complete" || document.readyState === "interactive"){
+    setTimeout(Init, 1);
+}else{
+    document.addEventListener("DOMContentLoaded", Init); 
+}
+
+function Init() {
+    time = new Date();
+    Start();
+    Loop();
+}
+
+function Loop() {
+    deltaTime = (new Date() - time) / 1000;
+    time = new Date();
+    Update();
+    requestAnimationFrame(Loop);
+}
+
+//****** GAME LOGIC ********//
+
+var sueloY = 22;
+var velY = 0;
+var impulso = 900;
+var gravedad = 2500;
+
+var dinoPosX = 42;
+var dinoPosY = sueloY; 
+
+var sueloX = 0;
+var velEscenario = 1280/3;
+var gameVel = 1;
+var score = 0;
+
+var parado = false;
+var saltando = false;
+
+var tiempoHastaObstaculo = 2;
+var tiempoObstaculoMin = 0.7;
+var tiempoObstaculoMax = 1.8;
+var obstaculoPosY = 16;
+var obstaculos = [];
+
+var tiempoHastaNube = 0.5;
+var tiempoNubeMin = 0.7;
+var tiempoNubeMax = 2.7;
+var maxNubeY = 270;
+var minNubeY = 100;
+var nubes = [];
+var velNube = 0.5;
+
+var contenedor;
+var dino;
+var textoScore;
+var suelo;
+var gameOver;
+
+function Start() {
+    gameOver = document.querySelector(".game-over");
+    suelo = document.querySelector(".suelo");
+    contenedor = document.querySelector(".contenedor");
+    textoScore = document.querySelector(".score");
+    dino = document.querySelector(".dino");
+    document.addEventListener("keydown", HandleKeyDown);
+}
+
+function Update() {
+    if(parado) return;
+    
+    MoverDinosaurio();
+    MoverSuelo();
+    DecidirCrearObstaculos();
+    DecidirCrearNubes();
+    MoverObstaculos();
+    MoverNubes();
+    DetectarColision();
+
+    velY -= gravedad * deltaTime;
+}
+
+function HandleKeyDown(ev){
+    if(ev.keyCode == 32){
+        Saltar();
+    }
+}
+
+function Saltar(){
+    if(dinoPosY === sueloY){
+        saltando = true;
+        velY = impulso;
+        dino.classList.remove("dino-corriendo");
+    }
+}
+
+function MoverDinosaurio() {
+    dinoPosY += velY * deltaTime;
+    if(dinoPosY < sueloY){
+        
+        TocarSuelo();
+    }
+    dino.style.bottom = dinoPosY+"px";
+}
+
+function TocarSuelo() {
+    dinoPosY = sueloY;
+    velY = 0;
+    if(saltando){
+        dino.classList.add("dino-corriendo");
+    }
+    saltando = false;
+}
+
+function MoverSuelo() {
+    sueloX += CalcularDesplazamiento();
+    suelo.style.left = -(sueloX % contenedor.clientWidth) + "px";
+}
+
+function CalcularDesplazamiento() {
+    return velEscenario * deltaTime * gameVel;
+}
+
+function Estrellarse() {
+    dino.classList.remove("dino-corriendo");
+    dino.classList.add("dino-estrellado");
+    parado = true;
+}
+
+function DecidirCrearObstaculos() {
+    tiempoHastaObstaculo -= deltaTime;
+    if(tiempoHastaObstaculo <= 0) {
+        CrearObstaculo();
+    }
+}
+
+function DecidirCrearNubes() {
+    tiempoHastaNube -= deltaTime;
+    if(tiempoHastaNube <= 0) {
+        CrearNube();
+    }
+}
+
+function CrearObstaculo() {
+    var obstaculo = document.createElement("div");
+    contenedor.appendChild(obstaculo);
+    obstaculo.classList.add("cactus");
+    if(Math.random() > 0.5) obstaculo.classList.add("cactus2");
+    obstaculo.posX = contenedor.clientWidth;
+    obstaculo.style.left = contenedor.clientWidth+"px";
+
+    obstaculos.push(obstaculo);
+    tiempoHastaObstaculo = tiempoObstaculoMin + Math.random() * (tiempoObstaculoMax-tiempoObstaculoMin) / gameVel;
+}
+
+function CrearNube() {
+    var nube = document.createElement("div");
+    contenedor.appendChild(nube);
+    nube.classList.add("nube");
+    nube.posX = contenedor.clientWidth;
+    nube.style.left = contenedor.clientWidth+"px";
+    nube.style.bottom = minNubeY + Math.random() * (maxNubeY-minNubeY)+"px";
+    
+    nubes.push(nube);
+    tiempoHastaNube = tiempoNubeMin + Math.random() * (tiempoNubeMax-tiempoNubeMin) / gameVel;
+}
+
+function MoverObstaculos() {
+    for (var i = obstaculos.length - 1; i >= 0; i--) {
+        if(obstaculos[i].posX < -obstaculos[i].clientWidth) {
+            obstaculos[i].parentNode.removeChild(obstaculos[i]);
+            obstaculos.splice(i, 1);
+            GanarPuntos();
+        }else{
+            obstaculos[i].posX -= CalcularDesplazamiento();
+            obstaculos[i].style.left = obstaculos[i].posX+"px";
+        }
+    }
+}
+
+function MoverNubes() {
+    for (var i = nubes.length - 1; i >= 0; i--) {
+        if(nubes[i].posX < -nubes[i].clientWidth) {
+            nubes[i].parentNode.removeChild(nubes[i]);
+            nubes.splice(i, 1);
+        }else{
+            nubes[i].posX -= CalcularDesplazamiento() * velNube;
+            nubes[i].style.left = nubes[i].posX+"px";
+        }
+    }
+}
+
+function GanarPuntos() {
+    score++;
+    textoScore.innerText = score;
+    if(score == 5){
+        gameVel = 1.5;
+        contenedor.classList.add("mediodia");
+    }else if(score == 10) {
+        gameVel = 2;
+        contenedor.classList.add("tarde");
+    } else if(score == 20) {
+        gameVel = 3;
+        contenedor.classList.add("noche");
+    }
+    suelo.style.animationDuration = (3/gameVel)+"s";
+}
+
+function GameOver() {
+    Estrellarse();
+    gameOver.style.display = "block";
+    let respuesta = prompt("Su tiempo se ah detenido antes de morir,¿Desea dirigirse a un area segura?")
+    if (respuesta=="SI"||respuesta=="si"||respuesta=="Si"){
+      window.location = "./secret.html"
+    }
+}
+
+function DetectarColision() {
+    for (var i = 0; i < obstaculos.length; i++) {
+        if(obstaculos[i].posX > dinoPosX + dino.clientWidth) {
+            //EVADE
+            break; //al estar en orden, no puede chocar con más
+        }else{
+            if(IsCollision(dino, obstaculos[i], 10, 30, 15, 20)) {
+                GameOver();
+            }
+        }
+    }
+}
+
+function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft) {
+    var aRect = a.getBoundingClientRect();
+    var bRect = b.getBoundingClientRect();
+
+    return !(
+        ((aRect.top + aRect.height - paddingBottom) < (bRect.top)) ||
+        (aRect.top + paddingTop > (bRect.top + bRect.height)) ||
+        ((aRect.left + aRect.width - paddingRight) < bRect.left) ||
+        (aRect.left + paddingLeft > (bRect.left + bRect.width))
+    );
+}
+
+</script>
+</body>
+</html>
